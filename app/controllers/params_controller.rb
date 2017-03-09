@@ -11,12 +11,13 @@ class ParamsController < ApplicationController
   end
 
   def number
+    @number_guessed = params["guess"].to_i
     x = 36
-      if params["number"].to_i == x
+      if @number_guessed == x
         @output = "Yes, You're a winner!  Nice Job!!!"
-      elsif params["number"].to_i > x
+      elsif @number_guessed > x
         @output = "No, Please Guess Lower"
-      elsif params["number"].to_i < x
+      elsif @number_guessed < x
         @output = "No, Please Guess Higher"
       end
       render "number.html.erb"
