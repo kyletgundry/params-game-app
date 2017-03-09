@@ -10,9 +10,13 @@ class ParamsController < ApplicationController
     render "names.html.erb"
   end
 
+  def form_number
+    render "form_number.html.erb"
+  end
+
   def number
     @number_guessed = params["guess"].to_i
-    x = 36
+    x = 32
       if @number_guessed == x
         @output = "Yes, You're a winner!  Nice Job!!!"
       elsif @number_guessed > x
