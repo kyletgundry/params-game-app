@@ -2,10 +2,10 @@ class ParamsController < ApplicationController
 
   def name
     @name = params["name"].upcase
-    if params["name"].start_with?("A", "a")
-      @string = "Hey, your name starts with the first letter of the alphabet!"
+    if @name.start_with?("A", "a")
+      @message = "Hey, your name starts with the first letter of the alphabet!"
     else
-      @string = "Hey, your name DOESN'T start with the first letter of the alphabet!"
+      @message = "Hey, your name DOESN'T start with the first letter of the alphabet!"
     end
     render "names.html.erb"
   end
